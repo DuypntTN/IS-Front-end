@@ -2,11 +2,13 @@ import * as React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import  Axios  from 'axios';
-import './style.scss';
 import { useSelector } from 'react-redux';
 import {selectUser} from '../../features/userSlice'
 import {Rating} from 'react-simple-star-rating'
 
+import classNames from 'classnames/bind';
+import styles from './PostPage.module.scss';
+const cx = classNames.bind(styles);
 
 function SearchPage() {
 
@@ -266,12 +268,12 @@ function SearchPage() {
    
 
     return (
-        <section className="post">
+        <section className={cx("post")}>
             <br/>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-10">
-                        <div className="wrapper">
+                        <div className={cx("wrapper")}>
                             <div className="row no-gutters">
                                     <div className="post-section rounded-5">
                                         <h1>POST PAGE</h1>
@@ -283,27 +285,27 @@ function SearchPage() {
                 <br/>
                 <div className="row justify-content-center">
                     <div className="col-md-10">
-                        <div className="wrapper">
+                        <div className={cx("wrapper")}>
                             <div className="row no-gutters">
                                 <div className="post-wrap w-100 p-lg-5 p-4 rounded-5">
                                     {/* <h3 className="mb-4 text-center">POST    PAGE</h3> */}
                                     <Form>
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Name hotel:</Form.Label>
+                                            <Form.Label className={cx('label')}>Name hotel:</Form.Label>
                                             <br></br>
                                             <input className='fctr form-control' type="text" placeholder="HOBO Hotel" required
                                             onChange={handleName}/>
                                         </Form.Group>
 
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>License number:</Form.Label>
+                                            <Form.Label className={cx('label')}>License number:</Form.Label>
                                             <br></br>
                                             <input className='fctr form-control' type="text" placeholder="0000-0000" required
                                             onChange={handleLicenseNumber}/>
                                         </Form.Group>
 
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Address:</Form.Label>
+                                            <Form.Label className={cx('label')}>Address:</Form.Label>
                                             <br></br>
                                             <input 
                                             className='fctr form-control' 
@@ -315,28 +317,28 @@ function SearchPage() {
                                         </Form.Group>
                                         
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Phone Number:</Form.Label>
+                                            <Form.Label className={cx('label')}>Phone Number:</Form.Label>
                                             <br></br>
                                             <input className='fctr form-control' type="text" placeholder="(+028) XX XXX XXX" required
                                             onChange={handlePhone}/>
                                         </Form.Group>
 
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Star:</Form.Label>
+                                            <Form.Label className={cx('label')}>Star:</Form.Label>
                                             <br></br>
                                             <input className='fctr form-control' type="number" placeholder="star" required min='0' max='5'
                                             onChange={handleStar}/>
                                         </Form.Group>
 
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Description:</Form.Label>
+                                            <Form.Label className={cx('label')}>Description:</Form.Label>
                                             <br></br>
                                             <textarea className="fctr form-control" cols="40" rows="5" required
                                             onChange={handleDescription}></textarea>
                                         </Form.Group>
                                     
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Thumbnail:</Form.Label>
+                                            <Form.Label className={cx('label')}>Thumbnail:</Form.Label>
                                             <br></br>
                                             <input className='fctr form-control' type="text" id="text-thumbnail" title=" " onChange={handleImageChange}/>
                                             <br></br>
@@ -354,12 +356,12 @@ function SearchPage() {
                 <br />
                 <div className="row justify-content-center">
                     <div className="col-md-10">
-                        <div className="wrapper">
+                        <div className={cx("wrapper")}>
                             <div className="row no-gutters">
                                 <div className="post-wrap w-100 p-lg-5 p-4 rounded-5">
                                     <Form>
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Utility:</Form.Label>
+                                            <Form.Label className={cx('label')}>Utility:</Form.Label>
                                             <br></br>
                                             {renderUtilities()}
                                         </Form.Group>
@@ -372,12 +374,12 @@ function SearchPage() {
                 <br />
                 <div className="row justify-content-center">
                     <div className="col-md-10">
-                        <div className="wrapper">
+                        <div className={cx("wrapper")}>
                             <div className="row no-gutters">
                                 <div className="post-wrap w-100 p-lg-5 p-4 rounded-5">
                                     <Form>
                                         <Form.Group className="post-group mb-3">
-                                            <Form.Label className='label'>Slider:</Form.Label>
+                                            <Form.Label className={cx('label')}>Slider:</Form.Label>
                                             <br></br>
                                             {renderSlider()}
                                         </Form.Group>

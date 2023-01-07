@@ -3,7 +3,9 @@ import axios from "~/api/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
-import './ContactPage.scss';
+import classNames from 'classnames/bind';
+import styles from './ContactPage.module.scss';
+const cx = classNames.bind(styles);
 
 function ContactPage() {
     const [formStatus, setFormStatus] = useState('Send Message');
@@ -50,15 +52,15 @@ function ContactPage() {
         
     };
     return (
-        <section className="contact-section">
+        <section className={cx("contact-section")}>
             <div className="container">
                 <ToastContainer position="top-center"/>
                 <div className="row justify-content-center">
                     <div className="col-md-10">
-                        <div className="wrapper rounded-5">
+                        <div className={cx("wrapper", "rounded-5")}>
                             <div className="row no-gutters">
                                 <div className="col-md-6">
-                                    <div className="contact-wrap w-100 p-lg-5 p-4 rounded-5">
+                                    <div className={cx("contact-wrap", "w-100 p-lg-5 p-4 rounded-5")}>
                                         <h3 className="mb-4">Send us a message</h3>
                                         <form
                                         id="contactForm"
@@ -125,7 +127,7 @@ function ContactPage() {
                                                         <input
                                                         type="submit"
                                                         value={formStatus}
-                                                        className="bt btn btn-primary"
+                                                        className={cx("bt btn btn-primary")}
                                                         />
                                                 </div>
                                                 </div>

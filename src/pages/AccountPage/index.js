@@ -2,8 +2,11 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/userSlice';
 import Axios from 'axios';
 import * as React from 'react';
-import './style.scss';
 import { Button, Col, Form, Image, InputGroup, Row, Toast } from 'react-bootstrap';
+
+import classNames from 'classnames/bind';
+import styles from './AccountPage.module.scss';
+const cx = classNames.bind(styles);
 
 function AccountPage() {
     const [inforUser, setInforUser] = React.useState({});
@@ -111,7 +114,7 @@ function AccountPage() {
                 <Toast.Body>{toastContent}</Toast.Body>
             </Toast>
             <div className="position-absolute top-0 start-0 ">
-                <div className="dropdown" ref={clickRef}>
+                <div className={cx("dropdown")} ref={clickRef}>
                     <button
                         className={'btn btn-info w-100 text-bg-dark' + (showSetting ? ' active' : '')}
                         onClick={() => {
@@ -168,11 +171,11 @@ function AccountPage() {
             <br />
             <div className="row justify-content-center">
                 <div className="col-md-5">
-                    <div className="wrapper">
+                    <div className={cx("wrapper")}>
                         <div className="row no-gutters">
                             {!isEditingPro5 ? (
                                 <div className="user-wrap w-100 p-lg-5 p-4 rounded-5">
-                                    <img className="avar rounded-circle" src={inforUser.avatar} alt="#" />
+                                    <img className={cx("avar", "rounded-circle")} src={inforUser.avatar} alt="#" />
                                     <h3>{inforUser.username}</h3>
                                     <p className="title">
                                         {inforUser.firstName} {inforUser.lastName}
@@ -340,7 +343,7 @@ function AccountPage() {
                                             />
                                         </Row>
                                         <Button className="btn btn-info" type="submit">
-                                            <div className="btn-text">Update</div>
+                                            <div className={cx("btn-text")}>Update</div>
                                         </Button>
                                     </Form>
                                 </div>
