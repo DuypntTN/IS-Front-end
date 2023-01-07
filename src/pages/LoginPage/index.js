@@ -35,6 +35,7 @@ function LoginPage() {
                 navigate('/');
             }
         } catch (error) {
+            // Error
             console.log(error);
             setError(error.response.data.message);
         }
